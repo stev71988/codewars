@@ -3,10 +3,10 @@ const frame = (text, char) => {
     let maxLength = Math.max(...text.map(elem => elem.replace(elem, elem.length))) + 4;
     
     // Build the top and bottom frames
-    let topBottom = '';
-    for (let i=0; i<maxLength; i++) {
-        topBottom += char;
-    }
+    let topBottom = char.repeat(maxLength);
+    // for (let i=0; i<maxLength; i++) {
+    //     topBottom += char;
+    // }
 
     // Build the body of the frame
     let body = '';
