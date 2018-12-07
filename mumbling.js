@@ -11,6 +11,5 @@ const accum = (array) => {
         return repeatLetter.replace(repeatLetter[0],repeatLetter[0].toUpperCase())
     })
 
-    return console.log(mumbled.join('-'))
+    return mumbled.join('-')
 }
-accum("abcbd")
