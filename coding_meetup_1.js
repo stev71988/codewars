@@ -1,3 +1,3 @@
 const countDevelopers = (array) => {
-    return array.filter(x => x.continent === 'Europe' && x.language === 'JavaScript').length
+    return array.filter(dev => dev.continent === 'Europe' && dev.language === 'JavaScript').length
 }
