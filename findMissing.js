@@ -1,18 +1,4 @@
 const findMissing = (arr) => {
-    let arrOfDiff = arr.map((num, i) => arr[i+1] - num).filter(num => !!num);
-
-    for (let i=0; i<arr.length; i++) {
-        let currentNum = arr[i];
-        if (currentNum + arrOfDiff[i]*2 !== arr[i+2]) {
-            return currentNum + arrOfDiff[i+1]
-        }
-    }
+    let step = (arr[arr.length-1] - arr[0]) / arr.length;
+    return arr.filter((x, i) => x+step !== arr[i+1])[0] + step
 }
-
-
-
-console.log(findMissing([1, 3, 5, 9, 11]))
-// 7
-
-console.log(findMissing([1, 3, 4]))
-// 2
