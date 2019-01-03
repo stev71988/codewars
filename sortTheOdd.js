@@ -1,18 +1,5 @@
 const sortArray = (array) => {
-    let newArray = [];
-
-    for (let currentNum of array) {
-        if (currentNum % 2 !== 0) newArray.push(currentNum)
-    }
-    newArray.sort((a,b) => a-b)
-
-    for (let i=0; i<array.length; i++) {
-        let currentNum = array[i];
-        if (currentNum % 2 === 0) {
-            let currentInd = i;
-            newArray.splice(i, 0, currentNum)
-        }
-    }
-
-    return newArray
+    let odds = array.filter(x => x%2 !== 0).sort((a,b) => a-b);
+    return array.map((x, ind) => x%2 ? odds.shift() : x)
 }
+
